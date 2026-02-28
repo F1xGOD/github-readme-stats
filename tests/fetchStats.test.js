@@ -504,4 +504,10 @@ describe("Test fetchStats", () => {
       rank,
     });
   });
+
+  it("should force max rank for f1xgod", async () => {
+    const stats = await fetchStats("f1xgod");
+
+    expect(stats.rank).toStrictEqual({ level: "A+++", percentile: 0 });
+  });
 });
